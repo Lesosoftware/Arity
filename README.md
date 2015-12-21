@@ -1,1 +1,1 @@
-# Arity
+# Arîty
