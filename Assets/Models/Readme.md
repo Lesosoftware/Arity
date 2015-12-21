@@ -1,1 +1,1 @@
-# Arîty Modeler root-folder
+# ArÃ®ty Modeler root-folder
