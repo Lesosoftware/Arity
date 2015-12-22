@@ -19,16 +19,19 @@ public class PlayerFPS_Global : MonoBehaviour {
 	public float MinCamY = -70F;
 	public float MaxCamY = 60F;
 	float CamRotationY = 0F;
+	Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
+		anim = GetComponent<Animator> ();
 		camera = GameObject.Find ("Cam_Main").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if ((rigidbody.velocity.magnitude < walkSpeed * 5 && !Input.GetKey (KeyCode.LeftShift)) || (rigidbody.velocity.magnitude < runSpeed * 5 && Input.GetKey (KeyCode.LeftShift))) {
+		anim.SetFloat ("walkSpeed",rigidbody.velocity.magnitude / 3);
+		if ((rigidbody.velocity.magnitude < walkSpeed * 3.3 && !Input.GetKey (KeyCode.LeftShift)) || (rigidbody.velocity.magnitude < runSpeed * 3.3 && Input.GetKey (KeyCode.LeftShift))) {
 			if (Input.GetKey (KeyCode.W)) {
 				// Forward
 				rigidbody.AddRelativeForce (new Vector3 (0, 0, walkAccel * 40));
