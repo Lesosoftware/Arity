@@ -8,6 +8,7 @@ public class PlayerFPS_Global : MonoBehaviour {
 	public float jumpVel = 0.8f;
 	public int canJump = 0;
 	private Rigidbody rigidbody;
+	float actHorizSpeed;
 
 	private Transform camera;
 	public Transform mRigNeck;
@@ -37,7 +38,6 @@ public class PlayerFPS_Global : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		anim.SetFloat ("walkSpeed",rigidbody.velocity.magnitude / 3);
 		if ((rigidbody.velocity.magnitude < walkSpeed * 3.3 && !Input.GetKey (KeyCode.LeftShift)) || (rigidbody.velocity.magnitude < runSpeed * 3.3 && Input.GetKey (KeyCode.LeftShift))) {
 			if (Input.GetKey (KeyCode.W)) {
 				// Forward
@@ -69,6 +69,9 @@ public class PlayerFPS_Global : MonoBehaviour {
 		
 		camera.localEulerAngles = new Vector3 (-CamRotationY, 0, 0);
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * CamSensitivityX, 0);
+		actHorizSpeed = Mathf.Lerp (actHorizSpeed, (Mathf.Abs (rigidbody.velocity.x) + Mathf.Abs (rigidbody.velocity.z)) / 4, 0.2f);
+		anim.SetFloat ("walkSpeed", actHorizSpeed);
+
 	}
 
 	void OnCollisionEnter(Collision col)
