@@ -74,19 +74,21 @@ public class PlayerFPS_Global : MonoBehaviour {
 		actHorizSpeed = Mathf.Lerp (actHorizSpeed, (Mathf.Abs (rigidbody.velocity.x) + Mathf.Abs (rigidbody.velocity.z)) / 4, 0.2f);
 		anim.SetFloat ("walkSpeed", actHorizSpeed);
 		animCam.SetFloat ("walkSpeed", actHorizSpeed);
-
+		animCam.SetFloat ("velAmmount", rigidbody.velocity.magnitude);
 	}
 
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.tag == "jumpable") {
 			canJump++;
+			animCam.SetBool ("touchesGround", canJump > 0);
 		}
 	}
 	void OnCollisionExit(Collision col)
 	{
 		if (col.gameObject.tag == "jumpable") {
 			canJump--;
+			animCam.SetBool ("touchesGround", canJump > 0);
 		}
 	}
 }
