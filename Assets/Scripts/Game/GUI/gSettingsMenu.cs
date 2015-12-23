@@ -6,6 +6,7 @@ public class gSettingsMenu : MonoBehaviour
 	public Object mainMenu;
 	int screenWidth = Screen.width;
 	int screenHeight = Screen.height;
+	bool escWasPressed = false;
 
 	// Use this for initialization
 	void Start ()
@@ -16,7 +17,15 @@ public class gSettingsMenu : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		if (Input.GetKey (KeyCode.Escape)) {
+			escWasPressed = true;
+		} else {
+			if (escWasPressed) {
+				escWasPressed = false;
+				GameController.menuShown = false;
+				Destroy (gameObject);
+			}
+		}
 	}
 
 	void OnGUI()
@@ -32,6 +41,7 @@ public class gSettingsMenu : MonoBehaviour
 
 		if (GUI.Button (new Rect (23, 71, 452, 71), "Grafik"))
 		{
+			GameController.menuShown = false;
 			Destroy (gameObject);
 		}
 
