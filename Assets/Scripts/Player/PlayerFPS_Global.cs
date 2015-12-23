@@ -23,12 +23,14 @@ public class PlayerFPS_Global : MonoBehaviour {
 	public float MaxCamY = 60F;
 	float CamRotationY = 0F;
 	Animator anim;
+	Animator animCam;
 
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 		camera = GameObject.Find ("Cam_Main").transform;
+		animCam = camera.parent.gameObject.GetComponent<Animator> ();
 		mRigNeck = GameObject.Find ("metarig|neck").transform;
 		mRigHead = GameObject.Find ("metarig|head").transform;
 
@@ -71,6 +73,7 @@ public class PlayerFPS_Global : MonoBehaviour {
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * CamSensitivityX, 0);
 		actHorizSpeed = Mathf.Lerp (actHorizSpeed, (Mathf.Abs (rigidbody.velocity.x) + Mathf.Abs (rigidbody.velocity.z)) / 4, 0.2f);
 		anim.SetFloat ("walkSpeed", actHorizSpeed);
+		animCam.SetFloat ("walkSpeed", actHorizSpeed);
 
 	}
 
