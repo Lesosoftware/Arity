@@ -12,7 +12,7 @@ Platform assembly: D:\users\Leo\Documents\GitHub\Arîty\Release\AlphaZentauri_Te
 Loading D:\users\Leo\Documents\GitHub\Arîty\Release\AlphaZentauri_Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\users\Leo\Documents\GitHub\Arîty\Release\AlphaZentauri_Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\users\Leo\Documents\GitHub\Arîty\Release\AlphaZentauri_Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.069 seconds
+- Completed reload, in  0.658 seconds
 desktop: 1680x1050 59Hz; virtual: 2960x1050 at -1280,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -20,4 +20,8 @@ desktop: 1680x1050 59Hz; virtual: 2960x1050 at -1280,0
 Platform assembly: D:\users\Leo\Documents\GitHub\Arîty\Release\AlphaZentauri_Test_Data\Managed\System.Core.dll (this message is harmless)
 Shader 'Nature/Terrain/Diffuse': dependency 'Details0' shader 'Hidden/TerrainEngine/Details/Vertexlit' not found
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3978 -> priority: 1 
+  Thread -> id: 3e60 -> priority: 1 
+<RI.Hid> Failed to get device caps (0xc0110001) for 邐ʈ.
+ 
+(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 96)
+
