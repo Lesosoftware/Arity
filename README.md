@@ -1,8 +1,6 @@
-# Arîty
+## Features
 
-## Description
-A game set on different planets written in C# using Unity Game Engine.
-
+- Game set on different planets
 - Programming Language: C#
 - Engine: Unity3D
 
